@@ -6,11 +6,26 @@ Every navigation item resolves to a real, styled page — flagship modules are f
 
 ---
 
-## ▶️ Run it locally
+## 🚀 Easiest way to run (double-click)
+
+> Requires **Node.js** installed once from [nodejs.org](https://nodejs.org) (LTS).
+
+1. **Download** this repo and **EXTRACT the ZIP** (right-click → *Extract All*). Do **not** run from inside the ZIP.
+2. Open the extracted **`react`** folder.
+3. **Windows:** double-click **`start-windows.bat`**
+   **Mac/Linux:** run `bash start-mac-linux.sh`
+4. Wait for `Local: http://localhost:5173/`, then open that link in your browser. 🎉
+
+The script auto-installs dependencies on first run and starts the dev server. Press **Ctrl + C** in the window to stop.
+
+---
+
+## ▶️ Run it manually (terminal)
 
 Requires Node.js 18+.
 
 ```bash
+cd react
 npm install
 npm run dev      # http://localhost:5173
 ```
