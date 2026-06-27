@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MyDR24 Healthcare Operating System (HOS) — Enterprise Super Admin Panel" />
+    <title>MyDR24 · Healthcare Operating System</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%9A%95%EF%B8%8F</text></svg>" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome (icons referenced by name throughout the app) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Leaflet (maps loaded via global L) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Prevent theme flash before React mounts -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('mydr24:theme') || 'dark';
+          document.documentElement.classList.toggle('dark', t === 'dark');
+          document.documentElement.setAttribute('data-theme', t);
+          var p = JSON.parse(localStorage.getItem('mydr24:prefs') || '{}');
+          if (p.density) document.documentElement.setAttribute('data-density', p.density);
+          if (p.sidebar) document.documentElement.setAttribute('data-sidebar', p.sidebar);
+          if (p.motion) document.documentElement.setAttribute('data-motion', p.motion);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
